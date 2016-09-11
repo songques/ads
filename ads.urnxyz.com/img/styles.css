@@ -1,0 +1,361 @@
+*{
+	margin: 0;
+	padding:0;
+}
+@font-face {
+	font-family: 'MyriadPro';
+	src: url('myriadpro-regular.eot');
+	src: url('myriadpro-regular.eot?#iefix') format('embedded-opentype'),
+		 url('myriadpro-regular.woff') format('woff'),
+		 url('myriadpro-regular.ttf') format('truetype'),
+		 url('myriadpro-regular.svg#MyriadProRegular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'MyriadPro';
+	src: url('MyriadPro-Bold.eot');
+	src: url('MyriadPro-Bold.eot?#iefix') format('embedded-opentype'),
+		 url('MyriadPro-Bold.woff') format('woff'),
+		 url('MyriadPro-Bold.ttf') format('truetype'),
+		 url('MyriadPro-Bold.svg#MyriadProBold') format('svg');
+	font-weight: bold;
+	font-style: normal;
+}
+
+html {
+	position: relative;
+	min-height: 100%;
+}
+
+body{
+	background: #000;
+	margin: 0 0 610px;
+	font-family: "MyriadPro","Myriad Pro","Lucida Grande","Lucida Sans Unicode","Trebuchet MS",sans-serif;
+}
+
+p{
+	font-size: 16px;
+	margin:20px 0;
+}
+.steps p {
+	color: #fff;
+	font-size: 30px;
+	margin: 20px auto 40px;
+}
+
+.sec1{
+	background: url("bg.jpg") no-repeat center top #000;
+	width: 100%;
+	-webkit-background-size: 100%;
+	-moz-background-size: 100%;
+	-o-background-size: 100%;
+	background-size: 100%;
+	height: 200vh;
+}
+
+.wrap2{
+	background: #020202;
+	background: rgba(0,0,0,0.72);
+	border: 4px solid #6d6d6d;
+	outline: 4px solid #7f95a7;
+	display: block;
+	height: 530px;
+	margin:0 auto;
+	position: relative;
+	text-align: center;
+	width: 540px;
+	z-index: 2;
+}
+
+#formHolder{
+	padding: 50px 0 250px;
+}
+.logo {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.logo img {
+	display: block;
+	height: auto !important;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 100%;
+	padding: 0;
+	width: auto;
+}
+
+#formHolder h1 {
+	font-size: 20px;
+	color: #fff;
+	text-align: center;
+}
+
+#formHolder h2{
+	font-size: 36px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+#formHolder h1 span {
+	font-size: 16px;
+	color: #35BD00;
+	text-align: center;
+}
+
+#joinForm {
+	z-index: 30;
+}
+
+.headline{
+	font-size: 18px;
+	font-weight: bold;
+	color: #fff600;
+	padding: 20px;
+	margin: 20px;
+	text-transform: uppercase;
+}
+
+.button {
+	background: #6ed400;
+	cursor: pointer;
+	font-size: 48px;
+	line-height: 2em;
+	height: 2em;
+	padding: 0 0.75em;
+	color: #fff;
+	max-width: 320px;
+	width: 100%;
+	-webkit-transition: background-color 0.5s;
+	-webkit-transition: backgound-color 1s;
+	transition: backgound-color 1s;
+	display: inline-block;
+	text-decoration: none;
+}
+.button:hover{
+	background: #9dff34;
+	text-decoration: none;
+}
+
+.steps{
+	width: 100%;
+	display: block;
+	margin: 0 auto;
+	padding: 20px;
+	color: white;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 30;
+	text-align: center;
+}
+.questions{
+	width: 100%;
+}
+
+
+
+.fancyFooter{
+	background: url("bottom-img.png") no-repeat center center transparent;
+	-webkit-background-size: contain;
+	-moz-background-size: contain;
+	-o-background-size: contain;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 82px;
+	width:400px;
+	display: block;
+	margin: -75px auto 0;
+	z-index: 20;
+	position: relative;
+}
+#step4.steps > p {
+  font-size: 26px;
+}
+#step5.steps > p {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+#step5.steps > p.strong {
+	font-size: 30px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+
+
+/* loader */
+.meter {
+	height: 20px;
+	position: relative;
+	margin: 20px 0;
+	background: #555;
+	-moz-border-radius: 25px;
+	-webkit-border-radius: 25px;
+	border-radius: 25px;
+	padding: 10px;
+	-webkit-box-shadow: inset 0 -1px 1px rgba(255,255,255,0.3);
+	-moz-box-shadow   : inset 0 -1px 1px rgba(255,255,255,0.3);
+	box-shadow        : inset 0 -1px 1px rgba(255,255,255,0.3);
+}
+.meter > span:after, .animate > span > span {
+	content: "";
+	position: absolute;
+	top: 0; left: 0; bottom: 0; right: 0;
+	background-image:
+	-webkit-gradient(linear, 0 0, 100% 100%,
+		color-stop(.25, rgba(255, 255, 255, .2)),
+		color-stop(.25, transparent), color-stop(.5, transparent),
+		color-stop(.5, rgba(255, 255, 255, .2)),
+		color-stop(.75, rgba(255, 255, 255, .2)),
+		color-stop(.75, transparent), to(transparent)
+		);
+	background-image:
+	-moz-linear-gradient(
+		-45deg,
+		rgba(255, 255, 255, .2) 25%,
+		transparent 25%,
+		transparent 50%,
+		rgba(255, 255, 255, .2) 50%,
+		rgba(255, 255, 255, .2) 75%,
+		transparent 75%,
+		transparent
+		);
+	z-index: 1;
+	-webkit-background-size: 50px 50px;
+	-moz-background-size: 50px 50px;
+	-webkit-animation: move 2s linear infinite;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+	overflow: hidden;
+}
+
+.animate > span:after {
+	display: none;
+}
+
+@-webkit-keyframes move {
+	0% {
+	 background-position: 0 0;
+ }
+ 100% {
+	 background-position: 50px 50px;
+ }
+}
+
+ .nostripes > span > span, .nostripes > span:after {
+	-webkit-animation: none;
+	background-image: none;
+}
+
+
+@media (min-width: 1000px) {
+	#formHolder{
+		padding: 50px 0 400px 0;
+	}
+}
+@media (max-width: 800px) {
+	.wrap2{
+		width: 490px;
+		height: 540px;
+	}
+
+	.logo{
+		margin: 0 auto 5px;
+		width: 80%;
+		text-align: center;
+	}
+
+	#formHolder{
+		padding: 12% 0 0 0;
+	}
+
+	#formHolder h1 {
+		font-size: 25px;
+		color: #fff;
+		text-align: center;
+	}
+
+	#formHolder h1 span {
+		font-size: 16px;
+		color: #35BD00;
+		text-align: center;
+	}
+	.button {
+		font-size: 38px;
+		width: 80%;
+	}
+    .fancyFooter{
+		width: 95%;
+    }
+    .steps p {
+    	font-size: 24px;
+    }
+}
+@media (max-width: 539px) {
+	.wrap2{
+		width: 370px;
+		height: 540px;
+	}
+	.steps p {
+		font-size: 22px;
+	}
+	.headline {
+		padding: 0;
+	}
+	#step4.steps > p {
+		font-size: 22px;
+	}
+
+}
+
+@media (max-width: 420px) {
+	body{
+		margin: 0 0 180px;
+	}
+	.wrap2 {
+		height: 420px;
+		width: 96%;
+	}
+	#formHolder{
+		padding-top: 8%;
+	}
+	.steps {
+		padding: 15px 10px;
+	}
+	.button {
+		font-size: 38px;
+		line-height: 1.8;
+		height: 1.8em;
+		padding: 0 0.66em;
+		width: 70%;
+	}
+	.headline {
+	  font-size: 17px;
+	  letter-spacing: -0.5px;
+	  margin: 10px;
+	  padding: 0;
+	}
+	.steps p {
+		font-size: 20px;
+	}
+    .fancyFooter{
+		width: 85%;
+    }
+
+}
+@media (max-width: 320px) {
+	.sec1{
+		margin-bottom: 70px;
+	}
+    .fancyFooter{
+		width: 75%;
+    }
+
+}

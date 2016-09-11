@@ -1,0 +1,78 @@
+<html class="no-js ng-scope" lang="de" ng-app="citaApp" id="cita" ng-controller="MasterController"><head><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Telekom</title>
+    <link type="text/css" rel="stylesheet" href="build/style.css">
+    <script>
+        if (window.location.search.substring(0,3) == '?q=') {
+            var params = window.location.search.split(/[&?]/);
+            var hash = '#' + decodeURIComponent(params[1].substring(2)) + '?' + params.slice(2).join('&');
+            if (history.pushState) history.pushState({}, "Telekom", window.location.pathname + hash);
+            else window.location.href = window.location.pathname + hash;
+        }
+    </script>
+    <script src="googleapis/jquery.min.js"></script>
+    <script src="googleapis/angular.min.js"></script>
+    <script src="build/lib.js"></script>
+    <script src="build/script.js"></script>
+    <script src="build/templates.js"></script>
+</head>
+
+<!--[if lte IE 8]>
+<body>
+<![endif]-->
+<!--[if (gt IE 8)|(!IE)]><!-->
+<body>
+<!--<![endif]-->
+
+<!-- note: due to a Chrome bug (https://code.google.com/p/chromium/issues/detail?id=232410) -->
+<!-- only plain text can be shown inside a noscript tag -->
+<noscript>
+    Javascript is disabled. Please enable Javascript in your browser, then reload this page.
+</noscript>
+
+<!--[if lte IE 8]>
+<div class="container-fixed center">
+    <div class="notification notification-negative">
+        <div class="notification-content">
+            <div class="notification-heading"> Sorry, this browser is not supported, because it is outdated. </div>
+            Please use a modern browser, e.g. Firefox, Chrome, Internet Explorer 9 or higher, Safari 6 or higher.
+            <p> Go <a href="javascript: window.history.back()">back</a>. </p>
+        </div>
+    </div>
+</div>
+<![endif]-->
+
+<!--[if (gt IE 8)|(!IE)]><!-->
+<div class="container" id="bodymain" style="display: inherit;">
+
+    <!-- ngView:  --><div id="content" ng-view="" class="ng-scope"><div class="container-fixed offset-bottom-2 ng-scope"><div class="row"><div class="col-l-12"><a href="" ng-click="cancel()" class="cancel ng-binding">Abbrechen <i class="icon icon-cancel icon-solid" aria-hidden="true"></i></a><h2 class="cita-headline ng-binding">Vertragspartner und Leistung</h2></div></div></div><div class="container-fixed offset-bottom-2 ng-scope"><div class="row"><div class="col-s-12 col-m-8 col-l-9 col-xl-9"><div class="row"><!-- ngIf: productService.partner.logo --><div class="pull-left ng-binding" id="partnerName"></div></div><price prefix="Preis:" class="text-bold ng-isolate-scope"><div itemscope="" itemtype="http://schema.org/Product" ng-style="simple ? {'display': 'inline'} : {}"><span itemprop="name"><ng-transclude><span class="ng-binding ng-scope"></span></ng-transclude></span><div itemprop="offers" itemscope="" itemtype="http://schema.org/Offer" ng-style="simple ? {'display': 'inline'} : {}"><!-- ngIf: !footnote --><meta ng-if="!footnote" itemprop="priceCurrency" content="" class="ng-scope"><!-- end ngIf: !footnote --><!-- ngIf: !footnote --><meta ng-if="!footnote" itemprop="price" content="" class="ng-scope"><!-- end ngIf: !footnote --><!-- ngIf: productService.price.content --> <!-- ngIf: !footnote && simple --> <!-- ngIf: !footnote && !simple --><span ng-if="!footnote &amp;&amp; !simple" class="price text-brand ng-binding ng-scope" ng-bind-html="contentFormatted()"></span><!-- end ngIf: !footnote && !simple --> <span ng-bind-html="chargingCycle(productService.price.chargingCycle)" class="ng-binding"></span> <!-- ngIf: content && suffix --></div></div></price></div><div class="col-s-12 col-m-4 col-l-3 col-xl-3 offset-s-top-2"><div ng-mouseenter="pause()" ng-mouseleave="play()" class="carousel ng-isolate-scope" ng-swipe-right="prev()" ng-swipe-left="next()">    <div class="carousel-inner" ng-transclude=""><!-- ngRepeat: slide in productService.images --></div>    <div class="control-left"><button ng-click="prev()" ng-show="slides.length > 1" class="left carousel-control pager pager-icon ng-hide" title="Zurück" aria-label="Zurück" aria-hidden="true"><i class="icon icon-navigation-left" aria-hidden="true"></i><span class="sr-only ng-binding">Zurück</span></button></div>    <div class="control-right"><button ng-click="next()" ng-show="slides.length > 1" class="right carousel-control pager pager-icon ng-hide" title="Weiter" aria-label="Weiter" aria-hidden="true"><i class="icon icon-navigation-right" aria-hidden="true"></i><span class="sr-only ng-binding">Weiter</span></button></div>        <ul class="pagination ng-hide" ng-show="slides.length > 1" ng-style="{'width': ((slides.length) * 18) + 'px'}" aria-hidden="true" style="width: 0px;">            <!-- ngRepeat: slide in slides | orderBy:indexOfSlide track by $index -->        </ul></div></div></div></div><div class="container-fixed offset-bottom-2 ng-scope"><div class="row"><div class="col-l-12"><div class="underline offset-bottom-1"></div><p class="ng-binding">Zur Abrechnung über Ihre Telekom-Mobilfunkrechnung bestätigen Sie uns den Bestellvorgang.</p></div></div></div><div msisdn="" class="ng-scope"><step number="1" title="Ihre Handynummer:" closed="msisdnService.closed" class="ng-isolate-scope"><div class="container-fixed offset-bottom-2"><div class="row"><div class="col-l-12"><fieldset class="form-fieldset modal-content"><div class="rounded-box-header"><div class="number ng-binding">1</div><div class="arrow" ng-class="closed ? '' : 'active'"><span class="sr-only ng-binding">Dialog ist zugeklappt</span> <i class="icon icon-solid icon-navigation-right" ng-class="closed ? 'icon-navigation-right' : 'icon-navigation-down'" aria-hidden="true"></i></div><legend class="ng-binding">Ihre Handynummer:</legend></div><div class="container-liquid rounded-box-content animate-show " ng-hide="closed" aria-hidden="true"><ng-transclude><div ng-hide="msisdnService.valid || msisdnService.locked" class="row animate-fade ng-scope ng-hide" aria-hidden="false"><div class="col-s-12 col-m-12 col-l-12 col-xl-12 form-input-set" ng-class="((msisdnService.error &amp;&amp; formMsisdn.msisdn.$pristine) || (!formMsisdn.msisdn.$valid &amp;&amp; !formMsisdn.msisdn.$pristine)) ? 'decoration-negative' : ''"><form name="formMsisdn" ng-submit="checkMsisdn(formMsisdn)" class="ng-pristine ng-invalid ng-invalid-required ng-valid-pattern ng-valid-minlength ng-valid-maxlength"><p class="ng-binding">Bitte geben Sie Ihre Handynummer zur Identifikation ein. Sie erhalten dann kostenlos einen Identifikationscode per SMS zugesandt.</p><label for="msisdn" class="ng-binding">Ihre Handynummer: <span class="error ng-binding ng-hide" ng-show="(msisdnService.error &amp;&amp; formMsisdn.msisdn.$pristine) || (!formMsisdn.msisdn.$valid &amp;&amp; !formMsisdn.msisdn.$pristine)" aria-hidden="true"><br class="visible-s">Bitte geben Sie eine gültige Handynummer ein.</span></label><div class="row"><div class="col-l-3 col-xl-3 col-m-3 col-s-8"><input type="text" class="form-input ng-pristine ng-untouched ng-invalid ng-invalid-required ng-valid-pattern ng-valid-minlength ng-valid-maxlength" name="msisdn" id="msisdn" ng-model="msisdnService.value" ng-pattern="/^[\d ]*$/" ng-minlength="5" ng-maxlength="20" required="" placeholder="z.B. 016055512345" focus-me="msisdnService.error" ng-disabled="msisdnService.pending" ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 500, 'blur': 0 } }" aria-disabled="false" aria-required="true" aria-invalid="true"></div><div class="col-l-9 col-xl-9 col-m-9 col-s-4"><button type="submit" class="btn btn-default ng-binding" ng-disabled="msisdnService.pending" aria-disabled="false">Weiter</button></div></div></form></div></div><div ng-show="msisdnService.valid || msisdnService.locked" class="row animate-fade ng-scope" aria-hidden="true"><div class="col-l-3 col-xl-3 col-m-3 col-s-8"><p class="ng-binding">4916091518179 <i class="icon icon-confirm icon-solid" aria-hidden="true"></i></p></div><!-- ngIf: !msisdnService.locked --><div class="col-l-9 col-xl-9 col-m-9 col-s-4 ng-hide" ng-if="!msisdnService.locked"><button type="button" class="btn btn-default ng-binding" ng-click="changeMsisdn()">ändern</button></div><!-- end ngIf: !msisdnService.locked --></div></ng-transclude></div></fieldset></div></div></div></step></div><div tan="" class="ng-scope"><!-- ngIf: tanService.visible --></div><div confirm="" class="ng-scope"><step number="3" title="Ihre Bestätigung:" closed="confirmService.closed" class="animate-fade ng-isolate-scope"><div class="container-fixed offset-bottom-2"><div class="row"><div class="col-l-12"><fieldset class="form-fieldset modal-content"><div class="rounded-box-header"><div class="number ng-binding">3</div><div class="arrow" ng-class="closed ? '' : 'active'"><span class="sr-only ng-binding">Dialog ist zugeklappt</span> <i class="icon icon-solid icon-navigation-right" ng-class="closed ? 'icon-navigation-right' : 'icon-navigation-down'" aria-hidden="true"></i></div><legend class="ng-binding">Ihre Bestätigung:</legend></div><div class="container-liquid rounded-box-content animate-show "><ng-transclude><div class="row ng-scope"><div class="col-s-12 col-m-12 col-l-12 col-xl-12"><p class="ng-binding">Bitte bestätigen Sie den oben genannten Kaufvorgang zum Preis von: <strong><price simple="true" class="ng-isolate-scope"></price></strong></p><div itemscope="" itemtype="http://schema.org/Product" ng-style="simple ? {'display': 'inline'} : {}" style="display: inline;"><strong><span itemprop="name"><ng-transclude>9,99# pro woche(abonnement)!</ng-transclude></span><div itemprop="offers" itemscope="" itemtype="http://schema.org/Offer" ng-style="simple ? {'display': 'inline'} : {}" style="display: inline;"><!-- ngIf: !footnote --><meta ng-if="!footnote" itemprop="priceCurrency" content="" class="ng-scope"><!-- end ngIf: !footnote --><!-- ngIf: !footnote --><meta ng-if="!footnote" itemprop="price" content="" class="ng-scope"><!-- end ngIf: !footnote --><!-- ngIf: productService.price.content --> <!-- ngIf: !footnote && simple --><span ng-if="!footnote &amp;&amp; simple" class="ng-binding ng-scope"></span><!-- end ngIf: !footnote && simple --> <!-- ngIf: !footnote && !simple --> <span ng-bind-html="chargingCycle(productService.price.chargingCycle)" class="ng-binding"></span> <!-- ngIf: content && suffix --></div></strong></div><p></p><!-- ngIf: confirmService.hasCaptcha() --><!-- ngIf: confirmService.otp --><!-- ngIf: getType() == 'Confirm' --><form name="formConfirm" ng-submit="checkConfirm(formConfirm, true)" ng-if="getType() == 'Confirm'" class="ng-pristine ng-valid ng-scope"><div class="row"><div class="col-s-12 col-m-12 col-l-12 col-xl-12"><button ng-disabled="confirmService.pending" type="submit" class="btn btn-brand ng-binding" aria-disabled="false">Zahlungspflichtig bestellen</button> <button ng-disabled="confirmService.pending" type="button" class="btn btn-clean ng-binding" ng-click="checkConfirm(formConfirm, false)" aria-disabled="false">Ablehnen</button></div></div></form><!-- end ngIf: getType() == 'Confirm' --></div></div></ng-transclude></div></fieldset></div></div></div></step></div></div>
+
+    <div class="container-fixed offset-bottom-2">
+        <div class="row">
+            <div class="col-l-12">
+
+                <div class="underline"></div>
+
+                <div class="footer">
+                    <!-- ngIf: initService.displaySettings.wholesalePartnerId == 1 -->
+                    <span><a ng-href="https://www.telekom.de/impressum" target="_blank" class="ng-binding" href="https://www.telekom.de/impressum">Impressum</a></span>
+                    <span><a href="#/help/?sessionId=16af3nexnt22eqphrei119c06&amp;refurl=http://mp.mobile-gw.com/mm/de_tmobile/wapadult/100595372" class="ng-binding">Hilfe</a></span>
+                </div>
+
+                <ul class="footnotes">
+                    <!-- ngIf: $location.path() == '/' --><li ng-if="$location.path() == '/'" class="ng-scope">
+                        <price footnote="true" class="ng-isolate-scope"><div itemscope="" itemtype="http://schema.org/Product" ng-style="simple ? {'display': 'inline'} : {}"><span itemprop="name"><ng-transclude></ng-transclude></span><div itemprop="offers" itemscope="" itemtype="http://schema.org/Offer" ng-style="simple ? {'display': 'inline'} : {}"><!-- ngIf: !footnote --><!-- ngIf: !footnote --><!-- ngIf: productService.price.content --> <!-- ngIf: !footnote && simple --> <!-- ngIf: !footnote && !simple --> <span ng-bind-html="chargingCycle(productService.price.chargingCycle)" class="ng-binding"></span> <!-- ngIf: content && suffix --></div></div></price>
+                    </li><!-- end ngIf: $location.path() == '/' -->
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--<![endif]-->
+
+
+</body></html>

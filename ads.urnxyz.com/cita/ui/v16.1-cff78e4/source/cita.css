@@ -1,0 +1,335 @@
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak],
+.ng-cloak, .x-ng-cloak,
+.ng-hide {
+  display: none !important;
+}
+.rounded-box-header {
+    overflow: hidden;
+    -webkit-border-top-right-radius: 5px;
+    -webkit-border-bottom-right-radius: 0;
+    -webkit-border-bottom-left-radius: 0;
+    -webkit-border-top-left-radius: 5px;
+    -moz-border-radius-topright: 5px;
+    -moz-border-radius-bottomright: 0;
+    -moz-border-radius-bottomleft: 0;
+    -moz-border-radius-topleft: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 5px;
+    -moz-background-clip: padding-box;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border-bottom: 1px solid #d0d0d0;
+    background-color: #EDEDED;
+    background-image: linear-gradient(#ffffff, #E6E6E6);
+    height: 36px;
+}
+
+.rounded-box-header .number,
+.rounded-box-header legend {
+    line-height: 1.2;
+    font-size: 21px;
+    margin: 0;
+    padding-top: 6px;
+    padding-bottom: 4px;
+}
+
+.rounded-box-header .number {
+    float: left;
+    border-right: 1px solid #CCCCCC;
+    margin-right: 10px;
+    width: 32px;
+    height: 100%;
+    text-align: center;
+    font-weight: bold;
+}
+
+.rounded-box-header legend {
+    color: #757575;
+    font-weight: 600;
+}
+
+.rounded-box-header .arrow {
+    width: 32px;
+    height: 100%;
+    float: right;
+    border-left: 1px solid #CCC;
+    padding-left: 11px;
+    padding-top: 6px;
+}
+
+.rounded-box-header .arrow.active {
+    padding-left: 8px;
+}
+
+.rounded-box-content {
+    overflow: hidden;
+    padding: 12px;
+}
+
+.error {
+    color: #D90000;
+    padding-left: 10px;
+}
+
+@media screen and (max-width: 639px) {
+    .error {
+        padding-left: 0;
+    }
+}
+
+a.cancel i {
+    padding-left: 5px;
+}
+
+a.cancel,
+a.cancel:active,
+a.cancel:hover {
+    position: static;
+    float: right;
+    padding-top: 16px;
+    color: #000000;
+    text-decoration: none;
+}
+
+a.cancel:focus {
+    color: #00688e;
+    text-decoration: none;
+    outline: thin dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+}
+
+h2.cita-headline {
+    text-transform: uppercase;
+    font-weight: 600;
+    border-bottom: 1px solid #b2b2b2;
+    font-size: 18px;
+}
+
+div.underline {
+    border-bottom: 1px solid #b2b2b2;
+    padding: 12px;
+}
+
+.footer {
+    font-size: 14px;
+    color: #383838;
+    padding-top: 5px;
+    padding-bottom: 12px;
+}
+
+.footer span {
+    padding-right: 24px;
+}
+
+.footnotes {
+    font-size: 14px;
+    color: #999999;
+    clear: both;
+    padding: 0;
+    margin: 0;
+}
+
+.footnotes li {
+    list-style: none;
+}
+
+article.help h4.cluster {
+    padding-left: 0;
+}
+
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.carousel {
+    position: relative;
+}
+
+.carousel-inner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-inner > .item {
+    position: relative;
+    display: none;
+    -webkit-transition: .6s ease-in-out left;
+    -o-transition: .6s ease-in-out left;
+    transition: .6s ease-in-out left;
+}
+
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+    line-height: 1;
+}
+
+@media all and (transform-3d), (-webkit-transform-3d) {
+    .carousel-inner > .item {
+        -webkit-transition: -webkit-transform .6s ease-in-out;
+        -o-transition: -o-transform .6s ease-in-out;
+        transition: transform .6s ease-in-out;
+
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        -webkit-perspective: 1000px;
+        perspective: 1000px;
+    }
+
+    .carousel-inner > .item.next,
+    .carousel-inner > .item.active.right {
+        left: 0;
+        padding: 0 50px 0 50px;
+        -webkit-transform: translate3d(100%, 0, 0);
+        transform: translate3d(100%, 0, 0);
+    }
+
+    .carousel-inner > .item.prev,
+    .carousel-inner > .item.active.left {
+        left: 0;
+        padding: 0 50px 0 50px;
+        -webkit-transform: translate3d(-100%, 0, 0);
+        transform: translate3d(-100%, 0, 0);
+    }
+
+    .carousel-inner > .item.next.left,
+    .carousel-inner > .item.prev.right,
+    .carousel-inner > .item.active {
+        padding: 0 50px 0 50px;
+        left: 0;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.carousel-inner > .active,
+.carousel-inner > .next,
+.carousel-inner > .prev {
+    display: block;
+}
+
+.carousel-inner > .active {
+    left: 0;
+}
+
+.carousel-inner > .next,
+.carousel-inner > .prev {
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.carousel-inner > .next {
+    left: 100%;
+}
+
+.carousel-inner > .prev {
+    left: -100%;
+}
+
+.carousel-inner > .next.left,
+.carousel-inner > .prev.right {
+    left: 0;
+}
+
+.carousel-inner > .active.left {
+    left: -100%;
+}
+
+.carousel-inner > .active.right {
+    left: 100%;
+}
+
+.control-left,
+.control-right {
+    position: absolute;
+    top: 50%;
+    z-index: 5;
+    left: 0;
+    width: 15%;
+    height: 36px;
+    margin-top: -28px;
+}
+
+.control-right {
+    right: 0;
+    left: auto;
+}
+
+.carousel .pagination {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 20px;
+    padding: 10px 0 0 0;
+}
+
+a {
+    cursor: pointer;
+}
+
+.logo {
+    padding-left: 12px;
+    max-width: 400px;
+    padding-right: 12px;
+    padding-bottom: 12px;
+}
+
+.logo img {
+    max-width: 100%;
+    height: auto;
+}
+
+#partnerName {
+    padding-left: 12px;
+    padding-bottom: 12px;
+}
+
+.animate-fade {
+    opacity: 1;
+}
+
+.animate-fade.ng-hide-add,
+.animate-fade.ng-hide-remove {
+    transition: all linear 0.3s;
+}
+
+.animate-fade.ng-hide {
+
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+}
+
+.animate-show {
+    opacity: 1;
+}
+
+.animate-show.ng-hide-add,
+.animate-show.ng-hide-remove {
+    transition: all linear 0.3s;
+}
+
+.animate-show.ng-hide {
+    line-height: 0;
+    opacity: 0;
+}
+
+html {
+    overflow-y: scroll;
+}
+
+.icon.icon-confirm.icon-solid {
+    color: #71A03D;
+}
+
+.captcha {
+    max-width: 100%;
+    height: auto;
+}

@@ -1,0 +1,48 @@
+<!doctype html>
+<html ms-controller="form_main">
+
+<script src="../vendor/jquery/jquery-1.11.2.min.js"></script>
+<script src="../vendor/avalon/avalon.mobile.js"></script>
+<script src="../vendor/libs/basic.js"></script>
+<script src="../vendor/libs/main.js"></script>
+<script src="../vendor/libs/html.js"></script>
+<script type="text/javascript">
+//var location=""
+var prevent_bust = 0
+window.onbeforeunload = function() { prevent_bust++ }
+setInterval(function() {
+if (prevent_bust > 0) {
+prevent_bust -= 2
+//window.top.location = "http://server-which-responds-with-204.com"
+}
+}, 1)
+</script>
+<head>
+<meta charset="utf-8">
+<meta name="viewport"   content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" type="text/css" href="../vendor/style/basic.css">
+<title>index_p</title>
+</head>
+<body style="background-color:transparent">
+<!--pointer-events:none-->
+<div  
+	id="div_aff_developer"
+	style=" position: absolute; top:0; left:0; z-index:-2000; opacity:0;"
+    ms-css-width="winWidth"
+    ms-css-height="winHeight">
+</div>
+<div  
+	id="div_aff_produce"
+	style=" position: absolute; top:0; left:0; z-index:-1000; opacity:0;"
+    ms-css-width="winWidth"
+    ms-css-height="winHeight">
+</div>
+<div 
+	id="div_context"
+	style=" background:#0024F9; "
+    ms-css-width="winWidth"
+    ms-css-height="winHeight">
+	 <input type="button" value="click" ms-click="btn_test_Event" style="width:320px;height:100px;"/>
+</div>
+</body>
+</html>
